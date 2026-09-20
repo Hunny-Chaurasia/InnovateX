@@ -33,12 +33,9 @@ export default function Landing() {
       {/* Hero */}
       <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
         <div className="max-w-2xl">
-          <div
-            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-bold text-2xl mb-8"
-            style={{ backgroundImage: `url(${logo})`,backgroundSize:'cover',backgroundPosition:'center',backgroundRepeat:'no-repeat'  }}
-          >
-           
-          </div>
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl overflow-hidden mb-8">
+  <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
+</div>
           <h1
             className="text-6xl font-bold mb-4 leading-tight"
             style={{ fontFamily: 'DM Sans', color: 'var(--foreground)' }}
