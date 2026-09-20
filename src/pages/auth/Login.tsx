@@ -35,7 +35,7 @@ export default function Login() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl overflow-hidden mb-8">
-  <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
+  <img src={logo} alt="Logo" className="w-full h-full object-cover" />
 </div>
           <h1 className="text-2xl font-bold mb-1" style={{ fontFamily: 'DM Sans', color: 'var(--foreground)' }}>
             Welcome back
