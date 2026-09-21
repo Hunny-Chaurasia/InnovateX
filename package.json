@@ -1,15 +1,11 @@
 {
-   "name": "innovate-x",
-  "version": "0.1.0",
+  "name": "innovate-x",
   "packageManager": "pnpm@9.15.4",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
-  {
-
-  "scripts": { ... }
-}
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite --host"
     "build": "vite build",
     "preview": "vite preview",
     "format": "oxfmt"
