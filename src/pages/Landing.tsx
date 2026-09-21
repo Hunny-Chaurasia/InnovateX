@@ -12,7 +12,7 @@ export default function Landing() {
         <div className="flex items-center gap-2">
           <div
             className="flex items-center justify-center w-7 h-7 rounded-lg font-bold text-xs"
-           style={{ backgroundImage:"url('/logo.png')",backgroundSize:'cover',backgroundPosition:'center',backgroundRepeat:'no-repeat'  }}
+           style={{backgroundImage: `url(${logo})`,backgroundSize:'cover',backgroundPosition:'center',backgroundRepeat:'no-repeat'  }}
           >
            
           </div>
