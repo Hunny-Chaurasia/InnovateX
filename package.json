@@ -1,5 +1,6 @@
 {
-  "name": "figma-make-app",
+  "name": "innovate-x",
+  "packageManager": "pnpm@9.15.4",
   "private": true,
   "version": "1.0.0",
   "type": "module",
