@@ -5,6 +5,7 @@ import { MOCK_INDUSTRY_PROJECTS } from '../../data/mock';
 import FundModal from '../../components/FundModal';
 import ProjectReviewModal from '../../components/ProjectReviewModal';
 import { useWorkflow, latestFunding, CURRENT_INDUSTRY } from '../../store/workflow';
+import { useNavigate } from 'react-router-dom';
 
 export default function IndustryDashboard() {
   const { toast } = useToast();
@@ -31,6 +32,7 @@ export default function IndustryDashboard() {
   const fundTarget = rows.find(p => p.id === fundModal);
   const viewTarget = rows.find(p => p.id === viewModal);
 
+  const navigate = useNavigate();
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <div className="mb-6 flex items-start justify-between flex-wrap gap-4">
@@ -60,7 +62,7 @@ export default function IndustryDashboard() {
         <h2 className="text-base font-semibold" style={{ fontFamily: 'DM Sans', color: 'var(--foreground)' }}>
           Student Projects on Your Problems
         </h2>
-        <Button variant="secondary" size="sm" onClick={() => toast('Navigating to full project discovery', 'info')}>
+        <Button variant="secondary" size="sm" onClick={() => navigate("/industry/discover")}>
           View all
         </Button>
       </div>
@@ -92,16 +94,16 @@ export default function IndustryDashboard() {
                   <span className="text-xs font-mono" style={{ color: 'var(--muted-foreground)' }}>{p.progress}%</span>
                 </div>
                 <div className="flex gap-1 flex-shrink-0">
-                  <Button variant="ghost" size="sm" onClick={() => toast(`Mentorship request sent for "${p.title}"`, 'success')}>
+                  {/* <Button variant="ghost" size="sm" onClick={() => toast(`Mentorship request sent for "${p.title}"`, 'success')}>
                     Mentor
                   </Button>
                   <Button variant="ghost" size="sm" onClick={() => toast(`Workshop invitation sent to team working on "${p.title}"`, 'info')}>
                     Workshop
-                  </Button>
+                  </Button> */}
                   <Button variant="secondary" size="sm" disabled={locked} onClick={() => setFundModal(p.id)}>
                     {f?.status === 'confirmed' ? '✓ Funded' : f?.status === 'awaiting_leader' ? 'Awaiting leader' : f?.status === 'declined' ? 'Fund again' : 'Fund'}
                   </Button>
-                  <Button size="sm" onClick={() => setViewModal(p.id)}>View & review →</Button>
+                  <Button size="sm" onClick={() => setViewModal(p.id)}>Review →</Button>
                 </div>
               </div>
               {f?.status === 'declined' && f.declineNote && (
