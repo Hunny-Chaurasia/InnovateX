@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, Badge, Button, EmptyState, Avatar } from '../../components/ui';
 import { useToast } from '../../components/Toast';
 import { useAllProblems, type ProblemStatement } from '../../store/workflow';
+// import { NewProject } from "NewProject";
 
 const DOMAINS = ['All', 'Technology', 'Healthcare', 'Environment', 'Education', 'Finance'];
 
@@ -9,6 +11,7 @@ type Problem = ProblemStatement;
 
 function ProblemDetailModal({ problem, onClose }: { problem: Problem; onClose: () => void }) {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [applied, setApplied] = useState(false);
 
   const handleSolve = () => {
@@ -93,7 +96,7 @@ function ProblemDetailModal({ problem, onClose }: { problem: Problem; onClose: (
         <div className="flex gap-3 p-5 border-t" style={{ borderColor: 'var(--border)' }}>
           <Button variant="secondary" onClick={onClose} className="flex-1">Close</Button>
           <Button
-            onClick={handleSolve}
+            onClick={() => navigate('/student/new-project')}
             className="flex-1"
             disabled={applied}
           >
