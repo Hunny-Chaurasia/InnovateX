@@ -130,15 +130,15 @@ export const MOCK_LEADERBOARD = {
   ],
 };
 
-export const STAGES = ['Idea', 'Problem', 'Team', 'Proposal', 'Build', 'Milestones', 'Feedback', 'Industry', 'Funding', 'Prototype', 'Deployment'];
+// export const STAGES = ['Idea', 'Problem', 'Team', 'Proposal', 'Build', 'Milestones', 'Feedback', 'Industry', 'Funding', 'Prototype', 'Deployment'];
 
 export const MOCK_MILESTONES = [
-  { id: 'm1', title: 'Submit Project Proposal', done: true, dueDate: 'Aug 20' },
-  { id: 'm2', title: 'Initial Prototype (MVP)', done: true, dueDate: 'Sep 1' },
-  { id: 'm3', title: 'User Research & Validation', done: true, dueDate: 'Sep 10' },
-  { id: 'm4', title: 'Integrate AI Model v1', done: false, dueDate: 'Sep 25' },
-  { id: 'm5', title: 'Pilot Deployment — 3 Clinics', done: false, dueDate: 'Oct 10' },
-  { id: 'm6', title: 'Full Demo to Industry Sponsor', done: false, dueDate: 'Oct 30' },
+  { id: 'm1', title: 'Submit Project Proposal', done: true, dueDate: 'Aug 20 2026' },
+  { id: 'm2', title: 'Initial Prototype (MVP)', done: true, dueDate: 'Sep 1 2026' },
+  { id: 'm3', title: 'User Research & Validation', done: true, dueDate: 'Sep 10 2026' },
+  { id: 'm4', title: 'Integrate AI Model v1', done: false, dueDate: 'Sep 25 2026' },
+  { id: 'm5', title: 'Pilot Deployment — 3 Clinics', done: false, dueDate: 'Oct 10 2026' },
+  { id: 'm6', title: 'Full Demo to Industry Sponsor', done: false, dueDate: 'Oct 30 2026' },
 ];
 
 export const MOCK_MENTORS = [
