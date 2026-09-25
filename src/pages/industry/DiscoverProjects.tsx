@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, StageBadge, Button } from '../../components/ui';
 import { useToast } from '../../components/Toast';
 import { MOCK_INDUSTRY_PROJECTS } from '../../data/mock';
@@ -14,6 +15,7 @@ const baseProjects = [
 
 export default function DiscoverProjects() {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const { fundings } = useWorkflow();
   const [stageFilter, setStageFilter] = useState('All');
   const [fundModal, setFundModal] = useState<string | null>(null);
@@ -80,11 +82,14 @@ export default function DiscoverProjects() {
                   {status === 'awaiting_leader' ? 'Funding awaiting leader' : p.lastActivity}
                 </span>
                 <div className="flex gap-2">
-                  <Button variant="ghost" size="sm" onClick={() => toast(`Mentorship request sent to ${p.team}`, 'success')}>Mentor</Button>
+                  {/* <Button variant="ghost" size="sm" onClick={() => toast(`Mentorship request sent to ${p.team}`, 'success')}>Mentor</Button> */}
+                  <Button variant="ghost" size="sm" onClick={() => navigate(`/industry/Views.tsx`)}>
+                    Team & Progress
+                  </Button>
                   <Button variant="secondary" size="sm" disabled={status === 'awaiting_leader' || status === 'confirmed'} onClick={() => setFundModal(p.id)}>
                     {status === 'confirmed' ? '✓ Funded' : 'Fund'}
                   </Button>
-                  <Button size="sm" onClick={() => setViewModal(p.id)}>View</Button>
+                  <Button size="sm" onClick={() => setViewModal(p.id)}>Review →</Button>
                 </div>
               </div>
             </Card>
